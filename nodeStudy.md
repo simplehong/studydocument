@@ -55,3 +55,8 @@ CommonJS(http://www.commonjs.org/)는 JavaScript를 브라우저에서뿐만 아
 
 커맨드라인에서 파라미터를 이용한 Node 실행
 
+### 해결 과제
+
++ (function() {}) (); 이런 즉시 실행용 함수의 용도
+
++ == vs ===
