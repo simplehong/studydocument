@@ -52,7 +52,7 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 
 #### 해결 과제
 
-+ Anonymous function: 익명함수 (function() {}) ();
++ Anonymous function: 익명함수 (function() {}) ();   
 [참고자료1](http://thoughtsonscripts.blogspot.kr/2012/01/javascript-anonymous-functions.html)
 [참고자료2](http://hotdogya.tistory.com/103)
 
@@ -64,7 +64,7 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 		b) scope management. Anonymous functions can be used to create temporary/private scope; 
 		c) Anonymous function are often handy in closures and recursions.
 
-+ \== vs ===
++ == vs ===
 
 		"==" --> 타입이 다른 비교일때, 타입을 변환하여 비교한다.
 		값을 변환하여 비교하는 규칙이 복잡하고 외외구 쉽지 않다고 함.
