@@ -84,3 +84,14 @@ CommonJS(http://www.commonjs.org/)는 JavaScript를 브라우저에서뿐만 아
 		 false == null          	   	// false
 		 null == undefined    			// true
 		 ' \t\r\n ' == 0             	// true
+		 
+## 03. 노드의 기본 모듈
+
+#### 전역 객체
+
+글로벌 변수로 어디서든 접근할 수있는 객체
+
++ 브라우저의 경우 --> window   
++ nodeJS --> global, process
++ debug 옵션
+	
