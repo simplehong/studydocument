@@ -52,16 +52,16 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 
 #### 해결 과제
 
-+ Anonymous function: 익명함수 (function() {}) ();   
++ Anonymous function: 익명함수 (function() {}) ();
 [참고자료1](http://thoughtsonscripts.blogspot.kr/2012/01/javascript-anonymous-functions.html)
 [참고자료2](http://hotdogya.tistory.com/103)
 
 		function level scoping 특성이 있어 anonymous function 안에서 선언된 모든 변수와 함수들은 밖에 존재하지 않는다.
 		사용의 경우 alias나 global object에 종속하기 위해서 사용한다.
-		
+
 		Simply, anonymous functions are used for the reasons of:
-		a) code brevity. It often makes sense to use anonymous functions calls in callbacks and event handlers; 
-		b) scope management. Anonymous functions can be used to create temporary/private scope; 
+		a) code brevity. It often makes sense to use anonymous functions calls in callbacks and event handlers;
+		b) scope management. Anonymous functions can be used to create temporary/private scope;
 		c) Anonymous function are often handy in closures and recursions.
 
 + == vs ===
@@ -69,7 +69,7 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 		"==" --> 타입이 다른 비교일때, 타입을 변환하여 비교한다.
 		값을 변환하여 비교하는 규칙이 복잡하고 외외구 쉽지 않다고 함.
 		"===" --> 동등성 비교에 사용해야 함.
-		
+
 		ex) 아래 예제의 경우 "==="을 사용할 때는 모두 false
 		 '' == '0'                     	// false
 		 0 == ''                       	// true
@@ -80,14 +80,14 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 		 false == null          	   	// false
 		 null == undefined    			// true
 		 ' \t\r\n ' == 0             	// true
-		 
+
 ## 03. 노드의 기본 모듈
 
 #### 전역 객체
 
 글로벌 변수로 어디서든 접근할 수있는 객체
 
-+ 브라우저의 경우 --> window   
++ 브라우저의 경우 --> window
 + nodeJS --> global, process
 + debug 옵션
 	
@@ -95,3 +95,5 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 
 + closure
 + octet stream
+
+
