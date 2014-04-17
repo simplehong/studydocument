@@ -91,3 +91,7 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 + nodeJS --> global, process
 + debug 옵션
 	
+#### 해결과제
+
++ closure
++ octet stream
