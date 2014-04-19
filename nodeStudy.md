@@ -75,14 +75,25 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 
 + [출처링크](http://orange-coding.net/2013/06/29/xfiles-part-i-learning-how-to-walk)
 
+#### 노드의 Coding style
++ 몇가지 대표적 관례
+
+항목 | 설명 | 예시
+-|-|-
+들여쓰기 | 공백 2칸 |
+세미콜론 | 자바스크립트 관례를 따라 항상 사용 |
+작은따옴표 | 문자열 등은 큰따옴표 대신 작은 따옴표 사용 |
+중괄호 | 여는 중괄호는 문장과 같은 라인에 작성 | if (true) { ...
+변수와 프로퍼티 | 소문자로 시작하는 카멜케이스 사용 |
+클래스 | 대문자로 시작하는 카멜케이스 사용 |
+콜백함수 | 콜백함수 첫 파라미터는 에러 파라미터로 사용 | callback(err, param)
+
++ [Felix's Node.js Style Guide](http://nodeguide.com/style.html), [한글링크](http://pismute.github.io/nodeguide.com/style.html)
 
 
 #### 해결 과제
 
 + Anonymous function: 익명함수 (function() {}) ();
-[참고자료1](http://thoughtsonscripts.blogspot.kr/2012/01/javascript-anonymous-functions.html)
-[참고자료2](http://hotdogya.tistory.com/103)
-
 		function level scoping 특성이 있어 anonymous function 안에서 선언된 모든 변수와 함수들은 밖에 존재하지 않는다.
 		사용의 경우 alias나 global object에 종속하기 위해서 사용한다.
 
@@ -90,6 +101,8 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 		a) code brevity. It often makes sense to use anonymous functions calls in callbacks and event handlers;
 		b) scope management. Anonymous functions can be used to create temporary/private scope;
 		c) Anonymous function are often handy in closures and recursions.
+[참고자료1](http://thoughtsonscripts.blogspot.kr/2012/01/javascript-anonymous-functions.html)
+[참고자료2](http://hotdogya.tistory.com/103)
 
 + \== vs ===
 
