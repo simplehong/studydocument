@@ -27,19 +27,24 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 #### NodeJS 특징
 
 + 이벤트 루프 기반의 비동기 I/O
+		노드의 I/O는 이벤트 루프를 기반으로 비동기로 실행.
+        I/O의 결과를 직접 리턴 받지 않고 콜백함수의 파라미터로 전달 받음.
 
 + 싱글 스레드
+		노드의 이벤트 루프는 싱글 스레드, 싱글 스택 사용.
+        개발자가 작성한 코드는 싱글 스레드 상에서 동기로 실행 됨.
+        그 외 모든 I/O는 비동기로 실행 됨.
 
 + 자바스크립트
+		이벤트 기반 동작 방식에 적합한 프로그래밍 언어.
+        현존 최강 자바스크립트 엔진인 크롬의 V8을 그대로 노드에 탑재.
 
 + 넌블로킹 I/O
-
-		빠르다 - 이벤트 루프 + 넌블로킹 I/O
+		빠르다 - 이벤트 루프 + 넌블로킹 I/O (비동기 + 콜백)
 		쉽다 - javascript
 		적은메모리 - 이벤트기반으로 멀티스레드 기반 시스템(apache) 보다 적은 메모리 사용
 
 + NodeJS 단점
-
 		스케일업으로 성능 향상이 되지 않음.
 		역사가 짧다.
 
@@ -48,7 +53,29 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 
 #### REPL (레플, Read-Eval-Print-Loop)
 
-커맨드라인에서 파라미터를 이용한 Node 실행
+커맨드라인에서 파라미터를 이용한 Node 실행 도구
+
+#### 노드의 Architecture
+
++ Node's internal architecture
+<center>![node_arch_image](http://orange-coding.net/wp-content/uploads/2013/06/node_standard1.png)</center>node library는 자바스크립트로 작성 되었으며, 나머지 영역은 C++로 작성 되었다.
+
++ Single threaded
+노드는 단 하나의 스레드를 사용한다.
+이는 context switching에 소비되는 자원낭비를 줄일 수 있고, 개발자가 concurrency control에 신경을 써야하는 부담을 없애준다.
+
++ Non blocking I/O
+노드는 논블러킹 I/O기반이다. 이는 기존의 DB calls같은 응답시간이 긴 작업에 해당 스레드가 대기하는 것을 피할 수 있다.
+그런데 노드는 싱글 스레드라고 했잖어?? 스레드 하나가 어떻게 이것을 처리해?? 아래 그림을 보시라.ㅋ
+<center>![node_event_loop](http://orange-coding.net/wp-content/uploads/2013/06/node_threading_model.png)</center>실제로는 이벤트 루프는 싱글 스레드로 동작하고, 노드 내부적으로 long running jobs을 처리할 worker threads가 존재한다.
+최종적으로 개발자는 이벤트 루프에 해당하는 싱글스레드만 신경쓰면 된다.
+
++ Event loop
+이벤트 루프는 C로 작성된 Marc Lehmann의 libev 라이브러리를 사용한다.
+
++ [출처링크](http://orange-coding.net/2013/06/29/xfiles-part-i-learning-how-to-walk)
+
+
 
 #### 해결 과제
 
@@ -64,22 +91,22 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 		b) scope management. Anonymous functions can be used to create temporary/private scope;
 		c) Anonymous function are often handy in closures and recursions.
 
-+ == vs ===
++ \== vs ===
 
 		"==" --> 타입이 다른 비교일때, 타입을 변환하여 비교한다.
 		값을 변환하여 비교하는 규칙이 복잡하고 외외구 쉽지 않다고 함.
 		"===" --> 동등성 비교에 사용해야 함.
 
 		ex) 아래 예제의 경우 "==="을 사용할 때는 모두 false
-		 '' == '0'                     	// false
-		 0 == ''                       	// true
-		 0 == '0'                     	// true
-		 false == 'false'         		// false
-		 false == '0'               	// true
-		 false == undefined  			// false
-		 false == null          	   	// false
-		 null == undefined    			// true
-		 ' \t\r\n ' == 0             	// true
+		 '' == '0'             // false
+		 0 == ''               // true
+		 0 == '0'              // true
+		 false == 'false'      // false
+		 false == '0'          // true
+		 false == undefined    // false
+		 false == null         // false
+		 null == undefined     // true
+		 '\t\r\n' == 0         // true
 
 ## 03. 노드의 기본 모듈
 
