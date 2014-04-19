@@ -1,4 +1,4 @@
-# Node Study
+# Node.js Study
 
 ## 01. NodeJS 소개
 
@@ -12,37 +12,37 @@ V8은 ECMA-262 스펙(5th Edition)에 명시 된 ECMASCript를 표준으로 구�
 
 V8은 standalone, 혹은 C++기반의 어떤 application환경(embedded)에서도 동작가능하다.
 
-V8 참고 자료:  
+**V8 참고 자료**:  
 The V8 Documentation: https://developers.google.com/v8/intro  
 Downloading and building V8: https://developers.google.com/v8/build  
 V8 Performance goals: https://developers.google.com/v8/design  
 
 #### CommonJS 표준을 준수한다.
 CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 아니라, 서버사이드 애플리케이션이나 데스크톱 애플리케이션에서도 사용하려고 조직한 자발적 워킹 그룹이다. CommonJS의 'Common'은 JavaScript를 브라우저에서만 사용하는 언어가 아닌 일반적인 범용 언어로 사용할 수 있도록 하겠다는 의지를 나타내고 있는 것이라고 이해할 수 있다.  
-[CommonJS 참고자료](http://helloworld.naver.com/helloworld/12864)
+[CommonJS 참고자료](http://helloworld.naver.com/helloworld/12864)  
 
 
 #### NodeJS 특징
 
-+ 이벤트 루프 기반의 비동기 I/O  
++ **이벤트 루프 기반의 비동기 I/O**  
 		노드의 I/O는 이벤트 루프를 기반으로 비동기로 실행.  
         I/O의 결과를 직접 리턴 받지 않고 콜백함수의 파라미터로 전달 받음.  
 
-+ 싱글 스레드  
++ **싱글 스레드**  
 		노드의 이벤트 루프는 싱글 스레드, 싱글 스택 사용.  
         개발자가 작성한 코드는 싱글 스레드 상에서 동기로 실행 됨.  
         그 외 모든 I/O는 비동기로 실행 됨.  
 
-+ 자바스크립트  
++ **자바스크립트**  
 		이벤트 기반 동작 방식에 적합한 프로그래밍 언어.  
         현존 최강 자바스크립트 엔진인 크롬의 V8을 그대로 노드에 탑재.  
 
-+ 넌블로킹 I/O  
++ **넌블로킹 I/O**  
 		빠르다 - 이벤트 루프 + 넌블로킹 I/O (비동기 + 콜백)  
 		쉽다 - javascript  
 		적은메모리 - 이벤트기반으로 멀티스레드 기반 시스템(apache) 보다 적은 메모리 사용  
 
-+ NodeJS 단점  
++ **NodeJS 단점**  
 		스케일업으로 성능 향상이 되지 않음.  
 		역사가 짧다.  
 
@@ -51,20 +51,20 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 
 #### REPL (레플, Read-Eval-Print-Loop)
 
-+ 커맨드라인에서 파라미터를 이용한 Node 실행 도구
++ **커맨드라인에서 파라미터를 이용한 Node 실행 도구**  
 
 #### 노드의 Architecture
 
-+ Node's internal architecture  
++ **Node's internal architecture**  
 	<center>![node_arch_image](http://orange-coding.net/wp-content/uploads/2013/06/node_standard1.png)</center>  
 		node library는 자바스크립트로 작성 되었으며, 나머지 영역은 C++로 작성 되었다.  
 
-+ Single threaded  
++ **Single threaded**  
 		노드는 단 하나의 스레드를 사용한다.  
 		이는 context switching에 소비되는 자원낭비를 줄일 수 있고,  
         개발자가 concurrency control에 신경을 써야하는 부담을 없애준다.  
 
-+ Non blocking I/O  
++ **Non blocking I/O**  
 	<center>![node_event_loop](http://orange-coding.net/wp-content/uploads/2013/06/node_threading_model.png)</center>  
 		노드는 논블러킹 I/O기반이다.  
         이는 기존의 DB calls같은 응답시간이 긴 작업에 해당 스레드가 대기하는 것을 피할 수 있다.  
@@ -74,14 +74,14 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
         노드 내부적으로 long running jobs을 처리할 worker threads가 존재한다.  
 		최종적으로 개발자는 이벤트 루프에 해당하는 싱글스레드만 신경쓰면 된다.  
 
-+ Event loop  
++ **Event loop**  
 		이벤트 루프는 C로 작성된 Marc Lehmann의 libev 라이브러리를 사용한다.  
 
 + [출처링크](http://orange-coding.net/2013/06/29/xfiles-part-i-learning-how-to-walk)
 
 #### 노드의 Coding style
 
-+ 몇가지 대표적 관례
++ **몇가지 대표적 관례**  
 
 항목 | 설명 | 예시  
 :-|:-|:-  
@@ -97,7 +97,7 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 
 #### 해결 과제
 
-+ Anonymous function: 익명함수 (function() {}) ();  
++ **Anonymous function: 익명함수 (function() {}) ();**  
 		function level scoping 특성이 있어 anonymous function 안에서 선언된 모든 변수와 함수들은 밖에 존재하지 않는다.  
 		사용의 경우 alias나 global object에 종속하기 위해서 사용한다.  
 
@@ -108,7 +108,7 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 [참고자료1](http://thoughtsonscripts.blogspot.kr/2012/01/javascript-anonymous-functions.html)  
 [참고자료2](http://hotdogya.tistory.com/103)  
 
-+ \== vs ===  
++ **\== vs ===**  
 
 		"==" --> 타입이 다른 비교일때, 타입을 변환하여 비교한다.  
 		값을 변환하여 비교하는 규칙이 복잡하고 외외구 쉽지 않다고 함.  
@@ -131,7 +131,7 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 
 #### 전역 객체
 
-+ global  
++ **global**  
 전역적으로 어디서든 접근할 수있는 객체. global 이라는 이름으로 존재하며, 생략가능. 아래 두 코드는 동일  
 		console.log('메시지');  
 		global.console.log('메시지');  
