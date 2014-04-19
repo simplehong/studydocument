@@ -58,7 +58,8 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 #### 노드의 Architecture
 
 + Node's internal architecture
-<center>![node_arch_image](http://orange-coding.net/wp-content/uploads/2013/06/node_standard1.png)</center>node library는 자바스크립트로 작성 되었으며, 나머지 영역은 C++로 작성 되었다.
+![node_arch_image](http://orange-coding.net/wp-content/uploads/2013/06/node_standard1.png)
+node library는 자바스크립트로 작성 되었으며, 나머지 영역은 C++로 작성 되었다.
 
 + Single threaded
 노드는 단 하나의 스레드를 사용한다.
@@ -67,7 +68,8 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 + Non blocking I/O
 노드는 논블러킹 I/O기반이다. 이는 기존의 DB calls같은 응답시간이 긴 작업에 해당 스레드가 대기하는 것을 피할 수 있다.
 그런데 노드는 싱글 스레드라고 했잖어?? 스레드 하나가 어떻게 이것을 처리해?? 아래 그림을 보시라.ㅋ
-<center>![node_event_loop](http://orange-coding.net/wp-content/uploads/2013/06/node_threading_model.png)</center>실제로는 이벤트 루프는 싱글 스레드로 동작하고, 노드 내부적으로 long running jobs을 처리할 worker threads가 존재한다.
+![node_event_loop](http://orange-coding.net/wp-content/uploads/2013/06/node_threading_model.png)
+실제로는 이벤트 루프는 싱글 스레드로 동작하고, 노드 내부적으로 long running jobs을 처리할 worker threads가 존재한다.
 최종적으로 개발자는 이벤트 루프에 해당하는 싱글스레드만 신경쓰면 된다.
 
 + Event loop
@@ -76,10 +78,11 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 + [출처링크](http://orange-coding.net/2013/06/29/xfiles-part-i-learning-how-to-walk)
 
 #### 노드의 Coding style
+
 + 몇가지 대표적 관례
 
 항목 | 설명 | 예시
--|-|-
+:-|:-|:-
 들여쓰기 | 공백 2칸 |
 세미콜론 | 자바스크립트 관례를 따라 항상 사용 |
 작은따옴표 | 문자열 등은 큰따옴표 대신 작은 따옴표 사용 |
@@ -89,7 +92,6 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 콜백함수 | 콜백함수 첫 파라미터는 에러 파라미터로 사용 | callback(err, param)
 
 + [Felix's Node.js Style Guide](http://nodeguide.com/style.html), [한글링크](http://pismute.github.io/nodeguide.com/style.html)
-
 
 #### 해결 과제
 
@@ -104,7 +106,7 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 [참고자료1](http://thoughtsonscripts.blogspot.kr/2012/01/javascript-anonymous-functions.html)
 [참고자료2](http://hotdogya.tistory.com/103)
 
-+ \== vs ===
++ == vs ===
 
 		"==" --> 타입이 다른 비교일때, 타입을 변환하여 비교한다.
 		값을 변환하여 비교하는 규칙이 복잡하고 외외구 쉽지 않다고 함.
@@ -123,10 +125,17 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 
 ## 03. 노드의 기본 모듈
 
+[Node.js API Reference](http://www.nodejs.org/api/)
+
 #### 전역 객체
 
-글로벌 변수로 어디서든 접근할 수있는 객체
++ global
+전역적으로 어디서든 접근할 수있는 객체. global 이라는 이름으로 존재하며, 생략가능. 아래 두 코드는 동일
+		console.log('메시지');
+		global.console.log('메시지');
 
+
+#### kkk
 + 브라우저의 경우 --> window
 + nodeJS --> global, process
 + debug 옵션
