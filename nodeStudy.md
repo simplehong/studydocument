@@ -13,12 +13,12 @@ V8은 ECMA-262 스펙(5th Edition)에 명시 된 ECMASCript를 표준으로 구�
 V8은 standalone, 혹은 C++기반의 어떤 application환경(embedded)에서도 동작가능하다.
 
 **V8 참고 자료**:  
-The V8 Documentation: https://developers.google.com/v8/intro  
-Downloading and building V8: https://developers.google.com/v8/build  
-V8 Performance goals: https://developers.google.com/v8/design  
+[The V8 Documentation](https://developers.google.com/v8/intro)  
+[Downloading and building V8](https://developers.google.com/v8/build)  
+[V8 Performance goals](https://developers.google.com/v8/design)  
 
 #### CommonJS 표준을 준수한다.
-CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 아니라, 서버사이드 애플리케이션이나 데스크톱 애플리케이션에서도 사용하려고 조직한 자발적 워킹 그룹이다. CommonJS의 'Common'은 JavaScript를 브라우저에서만 사용하는 언어가 아닌 일반적인 범용 언어로 사용할 수 있도록 하겠다는 의지를 나타내고 있는 것이라고 이해할 수 있다.  
+[CommonJS](http://www.commonjs.org)는 JavaScript를 브라우저에서뿐만 아니라, 서버사이드 애플리케이션이나 데스크톱 애플리케이션에서도 사용하려고 조직한 자발적 워킹 그룹이다. CommonJS의 'Common'은 JavaScript를 브라우저에서만 사용하는 언어가 아닌 일반적인 범용 언어로 사용할 수 있도록 하겠다는 의지를 나타내고 있는 것이라고 이해할 수 있다.  
 [CommonJS 참고자료](http://helloworld.naver.com/helloworld/12864)  
 
 
@@ -77,7 +77,7 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 + **Event loop**  
 		이벤트 루프는 C로 작성된 Marc Lehmann의 libev 라이브러리를 사용한다.  
 
-+ [출처링크](http://orange-coding.net/2013/06/29/xfiles-part-i-learning-how-to-walk)
++ [출처링크](http://orange-coding.net/2013/06/29/xfiles-part-i-learning-how-to-walk)  
 
 #### 노드의 Coding style
 
