@@ -10,7 +10,7 @@ V8 JavaScript Engine은 Google의 Open source JavaScript 엔진이다. V8은 C++
 
 V8은 ECMA-262 스펙(5th Edition)에 명시 된 ECMASCript를 표준으로 구현 되어있으며, Windows(XP or newer), Mac OS X (10.5 or newer), 그리고 Linux systems(IA-32, x64, or ARM processors) 환경에서 동작가능하다.
 
-V8은 standalone, 혹은 C++기반의 어떤 application환경(embedded)에서도 동작가능하다.
+V8은 standalone, 혹은 C++기반의 어떤 application환경(embedded)에서도 동작가능하다.  
 
 **V8 참고 자료**:  
 [The V8 Documentation](https://developers.google.com/v8/intro)  
@@ -68,8 +68,7 @@ V8은 standalone, 혹은 C++기반의 어떤 application환경(embedded)에서�
 	<center>![node_event_loop](http://orange-coding.net/wp-content/uploads/2013/06/node_threading_model.png)</center>  
 		노드는 논블러킹 I/O기반이다.  
         이는 기존의 DB calls같은 응답시간이 긴 작업에 해당 스레드가 대기하는 것을 피할 수 있다.  
-		그런데 노드는 싱글 스레드라고 했잖어?? 스레드 하나가 어떻게 이것을 처리해??  
-        위의 그림을 보시라.ㅋ  
+		노드는 싱글 스레드라고 명시 했는데, 이것이 가능한 이유는 위의 그림에 잘 나와있다.  
 		실제로는 이벤트 루프는 싱글 스레드로 동작하고,  
         노드 내부적으로 long running jobs을 처리할 worker threads가 존재한다.  
 		최종적으로 개발자는 이벤트 루프에 해당하는 싱글스레드만 신경쓰면 된다.  
@@ -133,6 +132,7 @@ V8은 standalone, 혹은 C++기반의 어떤 application환경(embedded)에서�
 
 + **global**  
 전역적으로 어디서든 접근할 수있는 객체. global 이라는 이름으로 존재하며, 생략가능. 아래 두 코드는 동일  
+
 		console.log('메시지');  
 		global.console.log('메시지');  
 
