@@ -107,7 +107,7 @@ V8은 standalone, 혹은 C++기반의 어떤 application환경(embedded)에서�
 [참고자료1](http://thoughtsonscripts.blogspot.kr/2012/01/javascript-anonymous-functions.html)  
 [참고자료2](http://hotdogya.tistory.com/103)  
 
-+ **\== vs ===**  
++ **\=\= vs \=\=\=**  
 
 		"==" --> 타입이 다른 비교일때, 타입을 변환하여 비교한다.  
 		값을 변환하여 비교하는 규칙이 복잡하고 외외구 쉽지 않다고 함.  
