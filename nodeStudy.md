@@ -2,7 +2,7 @@
 
 ## 01. NodeJS 소개
 
-> 노드는 서버사이드 자바스크립트 플랫폼이다.
+> ***노드는 서버사이드 자바스크립트 플랫폼이다.***
 
 #### google의 V8 기반으로 동작한다.
 
@@ -13,11 +13,7 @@ V8은 ECMA-262 스펙(5th Edition)에 명시 된 ECMASCript를 표준으로 구�
 V8은 standalone, 혹은 C++기반의 어떤 application환경(embedded)에서도 동작가능하다.
 
 V8 참고 자료:
-	The V8 Documentation: https://developers.google.com/v8/intro 
-	Downloading and building V8: https://developers.google.com/v8/build 
-	V8 Performance goals: https://developers.google.com/v8/design 
-	User mailing list: http://groups.google.com/group/v8-users 
-	The V8 contributor: http://code.google.com/p/v8/wiki/Contributing 
+The V8 Documentation: https://developers.google.com/v8/intro</br>Downloading and building V8: https://developers.google.com/v8/build</br>V8 Performance goals: https://developers.google.com/v8/design</br>User mailing list: http://groups.google.com/group/v8-users</br>The V8 contributor: http://code.google.com/p/v8/wiki/Contributing
 
 #### CommonJS 표준을 준수한다.
 CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 아니라, 서버사이드 애플리케이션이나 데스크톱 애플리케이션에서도 사용하려고 조직한 자발적 워킹 그룹이다. CommonJS의 'Common'은 JavaScript를 브라우저에서만 사용하는 언어가 아닌 일반적인 범용 언어로 사용할 수 있도록 하겠다는 의지를 나타내고 있는 것이라고 이해할 수 있다.
@@ -58,18 +54,22 @@ CommonJS( http://www.commonjs.org )는 JavaScript를 브라우저에서뿐만 �
 #### 노드의 Architecture
 
 + Node's internal architecture
-	![node_arch_image](http://orange-coding.net/wp-content/uploads/2013/06/node_standard1.png)
+	<center>![node_arch_image](http://orange-coding.net/wp-content/uploads/2013/06/node_standard1.png)</center>
 		node library는 자바스크립트로 작성 되었으며, 나머지 영역은 C++로 작성 되었다.
 
 + Single threaded
 		노드는 단 하나의 스레드를 사용한다.
-		이는 context switching에 소비되는 자원낭비를 줄일 수 있고, 개발자가 concurrency control에 신경을 써야하는 부담을 없애준다.
+		이는 context switching에 소비되는 자원낭비를 줄일 수 있고,
+        개발자가 concurrency control에 신경을 써야하는 부담을 없애준다.
 
 + Non blocking I/O
-	![node_event_loop](http://orange-coding.net/wp-content/uploads/2013/06/node_threading_model.png)
-    	노드는 논블러킹 I/O기반이다. 이는 기존의 DB calls같은 응답시간이 긴 작업에 해당 스레드가 대기하는 것을 피할 수 있다.
-		그런데 노드는 싱글 스레드라고 했잖어?? 스레드 하나가 어떻게 이것을 처리해?? 위의 그림을 보시라.ㅋ
-		실제로는 이벤트 루프는 싱글 스레드로 동작하고, 노드 내부적으로 long running jobs을 처리할 worker threads가 존재한다.
+	<center>![node_event_loop](http://orange-coding.net/wp-content/uploads/2013/06/node_threading_model.png)</center>
+		노드는 논블러킹 I/O기반이다.
+        이는 기존의 DB calls같은 응답시간이 긴 작업에 해당 스레드가 대기하는 것을 피할 수 있다.
+		그런데 노드는 싱글 스레드라고 했잖어?? 스레드 하나가 어떻게 이것을 처리해??
+        위의 그림을 보시라.ㅋ
+		실제로는 이벤트 루프는 싱글 스레드로 동작하고,
+        노드 내부적으로 long running jobs을 처리할 worker threads가 존재한다.
 		최종적으로 개발자는 이벤트 루프에 해당하는 싱글스레드만 신경쓰면 된다.
 
 + Event loop
